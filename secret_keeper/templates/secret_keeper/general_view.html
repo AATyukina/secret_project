@@ -1,0 +1,16 @@
+{% extends "secret_keeper/base.html" %}
+
+{% block title %}Save, keep and return{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Ok">
+    </form>
+    {% if data_to_show %}
+    <h4>
+        {{ data_to_show.text }}
+    </h4>
+    {% endif %}
+{% endblock %}

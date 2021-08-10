@@ -1,0 +1,16 @@
+{% extends "secret_keeper/base.html" %}
+
+{% block title %}Successfully Saved!{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <h1>
+            Your secret successfully saved!
+        </h1>
+        <h3>This is your access token:</h3>
+        <div>
+            {{ value }}
+        </div>
+        <p class="helper">Use it <a href="{% url 'secret_keeper:return' %}">here</a></p>
+    </div>
+{% endblock %}

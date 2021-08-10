@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Title {% endblock %}</title>
+    {% load static %}
+    <link href="{% static 'secret_keeper/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul class="navigation">
+            <li class="navigation-unit"><a href="{% url 'secret_keeper:save' %}">Save</a></li>
+            <li class="navigation-unit"><a href="{% url 'secret_keeper:return' %}">Get</a></li>
+        </ul>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>
